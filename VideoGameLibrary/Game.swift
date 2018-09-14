@@ -10,16 +10,10 @@ import Foundation
 
 class Game {
     let title: String
-    let genre: String
     var checkedIn: Bool = true
-    let dueDate: Date?
-    var releasedDate: Date
-
-    init(title: String, genre:String, checkedIn: Bool, dueDate: Date, releasedDate: Date) {
+    var dueDate: Date?
+    
+    init(title: String) {
         self.title = title
-        self.genre = genre
-        self.checkedIn = checkedIn
-        self.dueDate = dueDate
-        self.releasedDate = releasedDate
     }
 }

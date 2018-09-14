@@ -13,3 +13,7 @@ print("Welcome to the Video Game Library")
 let libraryMenu = Menu( ) //Create an instance of our Menu class which handles showing the menu, taking user input, and interacting with the rest of the application
 
 libraryMenu.go() //This handles running the logic loop for our video game library Once we break out of this function the library will close
+
+
+
+
