@@ -19,7 +19,7 @@ class Library {
         print("Please enter the title the title of the game you would like to add")
         //Get input from user
         var newGameTitle = readLine()
-        //Check to make sure input isnt nil or an empty string
+        //Check to make sure input isnt nil or an empty string (validating input)
         while newGameTitle == nil || newGameTitle == ""{
             print("Please put in a valid input")
             newGameTitle = readLine()
@@ -33,7 +33,7 @@ class Library {
     }
     
     func listAvailableGames ( ) {
-        for game in gameLibrary {
+        for game in gameLibrary { //Looping to make sure the games in the library are checked in and then printing them
             if game.checkedIn  {
                 print(game.title)
             }
@@ -49,12 +49,12 @@ class Library {
         var userInput = Int(readLine()!)
         //Make var to hold all possible indices for out array
         let validGameIndex = Array(0..<gameLibrary.count)
-        //Checking to make sure input is not nil and the number entered is not beyond the index of our array
+        //Checking to make sure input is not nil and the number entered is not beyond the index of our array (validating the input)
         while userInput == nil || !validGameIndex.contains(userInput!) {
             print("Invalid Input please enter a usable input")
             userInput = Int(readLine( )!)
         }
-        //Remove the game
+        //Removing the game
         gameLibrary.remove(at: userInput!)
     }
     
@@ -65,7 +65,7 @@ class Library {
                 print("\(index). \(gameLibrary[index].title)")
             }
         }
-        print("Please enter which game you want to check out")
+        print("Please enter which game you want to check out") //Input validation
         var userInput = Int(readLine( )!)
         
         while userInput == nil {
@@ -88,10 +88,10 @@ class Library {
         //Loop through our game array and print index and title if game is able to be checked in
         for index in 0..<gameLibrary.count {
             if gameLibrary[index].checkedIn == false {
-                print("\(index). \(gameLibrary[index].title)")
+                print("\(index). \(gameLibrary[index].title)") //Give sthe title of the game an index
             }
         }
-        print("Please enter which game you want to check in")
+        print("Please enter which game you want to check in") //Input validation
         var userInput = Int(readLine( )!)
         
         while userInput == nil {
@@ -105,7 +105,8 @@ class Library {
     
     
     func listOfCheckedOutGames ( ) {
-        for game in gameLibrary {
+        for game in gameLibrary { //Looping through the games that have been checked in and printing them and also printing out the due dates which
+           // are made to be be two weeks after the current date
             if !game.checkedIn {
                 print(game.title)
                 if let dueDate = game.dueDate {

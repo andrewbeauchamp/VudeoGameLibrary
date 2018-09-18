@@ -16,7 +16,7 @@ class Menu {
         while !shouldQuit {
              printMenu()
             var input = getInput()
-            //We need to add inout validation function to make sure the value falls between 1-8
+            //We need to add input validation function to make sure the value falls between 1-8
             while !validateInput(input) {
                 //Display menu again
                 printMenu()
@@ -28,7 +28,7 @@ class Menu {
         }
     }
     
-    func validateInput(_ input: String) -> Bool {
+    func validateInput(_ input: String) -> Bool { //This function is for the while loop above to print the menu after the input is validated
         let validMenuOptions = Array(1...8)
         guard let number = Int(input)  else{
             return false
@@ -60,19 +60,19 @@ class Menu {
         switch input {
         case "1":
             print("You have selected to add a game")
-           //Check
+           //Adds game to the list of games in the library
             theLibrary.addGame()
             print("Game Added")
         case "2":
             print("You have selected to remove a game")
             theLibrary.removeGame()
             print("Game has been removed")
-            //Call the library's remove game function, Check
+            //Removes game from the list of the library
         case "3":
             print("You have selected to see the list of avaailable games. Here they are")
             theLibrary.listAvailableGames()
             
-            //Call the list of available games function, Check
+            
         case "4":
             print("You have selected to check out a game")
             theLibrary.checkOutGame()
@@ -87,10 +87,10 @@ class Menu {
             print("You have selected to see the list of checked out games, Here they are")
             theLibrary.listOfCheckedOutGames()
             //Call list of checked out games function
-        case "8": //Don't need to do the print menu function because it prints the menu anyways, Check
+        case "8": //Don't need to do the print menu function because it prints the menu anyways
             print("You have selected the Menu")
         case "7":
-            //call the quit function, Check
+            //call the quit function
             print("You have Quit")
             exit(0)
         default:

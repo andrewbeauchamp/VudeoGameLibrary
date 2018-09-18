@@ -13,7 +13,7 @@ class Game {
     var checkedIn: Bool = true
     var dueDate: Date?
     
-    init(title: String) {
+    init(title: String) { //The other two values (checkedIn and dueDate do not need any initializers since one of them is an optional and the other has a default value
         self.title = title
     }
 }
